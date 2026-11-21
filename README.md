@@ -16,7 +16,7 @@ JanHacks 2027 is built specifically for young makers and student developers: 
 * **Students Only:** You must be currently enrolled in middle school, secondary/high school, or an equivalent student program (including homeschooled students).
 * **No Companies or Professionals:** Companies, agencies, commercial startups, and professional/adult organizations are strictly excluded from participating. All projects must be built independently by eligible students.
 
-# 📅 Timeline
+# 🗓 Timeline
 
 *(All times are in **UTC** — check your local time on [Time.is](/goto?url=CAESUAHEIkXXaCIaPcANMoP8xNsHsiVh76ackPzNPiePDV5p1qTDup-QgLgy6X-tK_Nz4XEEFIsbs425XHI6ow74pGN6c3xzlgQEkNF7wJv_GRD9))* 
 
