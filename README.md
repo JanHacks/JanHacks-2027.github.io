@@ -2,7 +2,7 @@
 
 **Kick off 2027 with a two-month teen hackathon (ages 13–18) focused on open-ended creation with zero AI.**
 
-🌐 **Official Website & Sponsorship Info:** https://github.io  
+🌐 **Official Website & Sponsorship Info:** https://janhacks.github.io  
 🏆 **Register & Submit on Devpost:** https://janhacks-2027.devpost.com
 
 ---
