@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JanHacks 2027 | 100% Human-Made Teen Hackathon</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card: #181b24;
+      --border: #2a2f3d;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #0ea5e9;
+      --basic: #94a3b8;
+      --premium: #34d399;
+      --gold: #fbbf24;
+      --platinum: #c084fc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 1.25rem;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 4.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0b1120;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+    }
+
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 2.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      overflow-wrap: break-word;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .tier {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      overflow-wrap: break-word;
+    }
+
+    .tier-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .tier-req {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tier ul {
+      list-style: none;
+      margin-bottom: 0.5rem;
+      flex-grow: 1;
+    }
+
+    .tier ul li {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      margin-bottom: 0.65rem;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .tier ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .tier.basic { border-top: 4px solid var(--basic); }
+    .tier.basic .tier-name, .tier.basic li::before { color: var(--basic); }
+
+    .tier.premium { border-top: 4px solid var(--premium); }
+    .tier.premium .tier-name, .tier.premium li::before { color: var(--premium); }
+
+    .tier.gold { border-top: 4px solid var(--gold); }
+    .tier.gold .tier-name, .tier.gold li::before { color: var(--gold); }
+
+    .tier.platinum { border-top: 4px solid var(--platinum); }
+    .tier.platinum .tier-name, .tier.platinum li::before { color: var(--platinum); }
+
+    .sponsor-cta {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2.5rem;
+      overflow-wrap: break-word;
+    }
+
+    .sponsor-cta h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.35rem;
+    }
+
+    .sponsor-cta p {
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Jan 1 – Mar 1, 2027 • Online • Ages 13–18</div>
+      <h1>JanHacks 2027</h1>
+      <p class="subtitle">
+        Two full months to build anything you want: open-ended, <strong>zero AI</strong>, and exclusively for teen students aged 13–18. 100% human-made code, art, and creativity.
+      </p>
+      <div class="btn-group">
+        <a href="https://devpost.com" class="btn btn-primary" target="_blank" rel="noopener">Register on Devpost</a>
+        <a href="#sponsors" class="btn btn-secondary">Sponsor JanHacks</a>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>Built by Humans, Not Prompts</h2>
+      <p class="section-lead">
+        Instead of a rushed 48-hour weekend filled with AI wrappers, JanHacks 2027 gives middle and high school builders two full months to learn real software craft from scratch.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>🚫 Strict Zero-AI Rule</h3>
+          <p>No AI-generated code, art, audio, or LLM wrappers. Every line and pixel is crafted by student builders.</p>
+        </div>
+        <div class="card">
+          <h3>🎓 Teen Builders (13–18)</h3>
+          <p>Exclusively open to middle school, high school, and homeschooled students worldwide—solo or in teams up to 4.</p>
+        </div>
+        <div class="card">
+          <h3>🏆 10 Prize Categories</h3>
+          <p>Awards for Grand Champions, Best Beginner, Best Design, Best Game, Best Web/App, Best Utility/Bot, and Best Solo Hack.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sponsors">
+      <h2>Why Sponsor JanHacks 2027?</h2>
+      <p class="section-lead">
+        Partner with a global community of motivated young developers who are actively learning real tools, writing original code, and forming lifelong developer habits.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Real Tool Adoption</h3>
+          <p>Because AI shortcuts are banned, participants spend two full months genuinely learning IDEs, game engines, design tools, APIs, and hosting platforms.</p>
+        </div>
+        <div class="card">
+          <h3>Next-Gen Developer Reach</h3>
+          <p>Connect directly with ambitious 13–18 year old creators early in their coding journey—long before they enter university or industry.</p>
+        </div>
+        <div class="card">
+          <h3>Zero-Friction In-Kind Perks</h3>
+          <p>We keep JanHacks 100% free worldwide. You can sponsor easily with digital licenses, promo codes, cloud credits, or subscriptions—no cash budget required.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 3rem; font-size: 1.5rem;">Sponsorship Tiers</h3>
+      <p style="color: var(--muted); margin-top: 0.35rem;">
+        Tiers are flexible and based on estimated in-kind prize value or participant perks provided.
+      </p>
+
+      <div class="tiers-grid">
+        <div class="tier basic">
+          <div class="tier-name">Basic</div>
+          <div class="tier-req">Winner promo codes or starter perks (~$100+ value)</div>
+          <ul>
+            <li>Logo & link on JanHacks website</li>
+            <li>Logo featured on Devpost sponsors section</li>
+            <li>Mention in kickoff & closing announcements</li>
+          </ul>
+        </div>
+
+        <div class="tier premium">
+          <div class="tier-name">Premium</div>
+          <div class="tier-req">Multi-winner licenses or all-participant credits (~$300+ value)</div>
+          <ul>
+            <li>Everything in <strong>Basic</strong></li>
+            <li>Featured spot in Participant Resource Guide</li>
+            <li>Dedicated shoutout post on GitHub & Devpost updates</li>
+            <li>Option to provide a starter tutorial or workshop link</li>
+          </ul>
+        </div>
+
+        <div class="tier gold">
+          <div class="tier-name">Gold</div>
+          <div class="tier-req">Major prize bundle or full-cohort tool access (~$750+ value)</div>
+          <ul>
+            <li>Everything in <strong>Premium</strong></li>
+            <li><strong>Named Prize Track</strong> (e.g., <em>"Best Design powered by [Sponsor]"</em>)</li>
+            <li>Top-row logo placement on website & Devpost</li>
+            <li>Invitation to join our judging panel</li>
+          </ul>
+        </div>
+
+        <div class="tier platinum">
+          <div class="tier-name">Platinum</div>
+          <div class="tier-req">Headline partner or grand prize package (~$1,500+ value)</div>
+          <ul>
+            <li>Everything in <strong>Gold</strong></li>
+            <li><strong>Co-Presenting Partner</strong> billing across all event pages</li>
+            <li>Custom sponsor challenge or Grand Champion prize</li>
+       <footer>
+      <p>
+        Organized by <strong>Nazim Kalim Shaikh</strong>, a 13-year-old learning Web Development • 
+        <a href="https://nazimkalimshaikh.github.io" target="_blank" rel="noopener">Portfolio</a> • 
+        <a href="https://janhacks-2027.devpost.com" target="_blank" rel="noopener">Devpost</a> • 
+        <a href="https://github.com/JanHacks" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </footer>
+
