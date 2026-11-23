@@ -232,6 +232,36 @@
     }
 
     footer {
+      .judge-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.judge-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  flex-shrink: 0;
+}
+
+.judge-info h3 {
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.judge-info p {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
       text-align: center;
       padding: 2.5rem 0;
       color: var(--muted);
@@ -278,6 +308,29 @@
         </div>
       </div>
     </section>
+
+    <section id="judges">
+  <h2>Meet the Judges</h2>
+  <p class="section-lead">
+    Projects are evaluated asynchronously on Creativity &amp; Originality, Execution &amp; Polish, Technical Craft &amp; Design, and Fun &amp; Usefulness.
+  </p>
+  <div class="grid-3">
+    <div class="judge-card">
+      <img src="nazim.jpg" alt="Nazim Kalim Shaikh" class="judge-avatar" />
+      <div class="judge-info">
+        <h3>Nazim Kalim Shaikh</h3>
+        <p>Organizer and Host, JanHacks 2027</p>
+      </div>
+    </div>
+    <div class="judge-card">
+      <img src="animesh.jpg" alt="Animesh Alang" class="judge-avatar" />
+      <div class="judge-info">
+        <h3>Animesh Alang</h3>
+        <p>Researcher at UC Santa Cruz (AI in Education) • Builder of dino.study</p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="sponsors">
       <h2>Why Sponsor JanHacks 2027?</h2>
