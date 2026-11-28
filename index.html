@@ -321,7 +321,7 @@
       <img src="nazim.png" alt="Nazim Kalim Shaikh" class="judge-avatar" />
       <div class="judge-info">
         <h3>Nazim Kalim Shaikh</h3>
-        <p>13 year old Software Dev</p>
+        <p>13 year old Software Dev • Logo designed by Draiveri</p>
         <p>Organizer and Host, JanHacks 2027</p>
       </div>
     </div>
@@ -334,6 +334,24 @@
     </div>
   </div>
 </section>
+    <p id="countdown"></p>
+    <script>
+var countDownDate = new Date("Jan 1, 2027 00:00 UTC").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "JanHacks 2027 is here!! Join now!";
+  }
+}, 1000);
+</script>
     <!-- Our Proud Sponsors Section -->
 <section id="sponsors" class="sponsors-section">
   <div class="container">
